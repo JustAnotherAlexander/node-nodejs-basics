@@ -1,3 +1,9 @@
+import crypto from 'crypto'
+
 export const calculateHash = async () => {
-    // Write your code here 
+    let hash = crypto.createHash('sha256');
+    hash.update('./files/fileToCalculateHashFor.txt');
+    console.log(hash.digest('hex'));
 };
+
+calculateHash();
